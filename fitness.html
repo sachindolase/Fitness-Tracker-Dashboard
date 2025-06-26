@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker Dashboard App</title>
+    <link rel="stylesheet" href="fitness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-heartbeat"></i> Fitness Tracker Dashboard Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#charts">Charts</a></li>
+                <li><a href="#history">History</a></li>
+                <li><button id="theme-toggle">Toggle Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="summary">
+            <h2>Daily Summary</h2>
+            <div id="calories-burned">
+                <i class="fas fa-fire"></i>
+                <h3>Calories Burned</h3>
+                <p id="calories-value">0</p>
+                <div class="progress-bar" id="calories-progress"></div>
+            </div>
+            <div id="steps-taken">
+                <i class="fas fa-shoe-prints"></i>
+                <h3>Steps Taken</h3>
+                <p id="steps-value">0</p>
+                <div class="progress-bar" id="steps-progress"></div>
+            </div>
+            <div id="active-minutes">
+                <i class="fas fa-stopwatch"></i>
+                <h3>Active Minutes</h3>
+                <p id="active-minutes-value">0</p>
+                <div class="progress-bar" id="active-minutes-progress"></div>
+            </div>
+        </section>
+        <section id="activities">
+            <h2>Activities</h2>
+            <div id="add-activity">
+                <input type="text" id="activity-name" placeholder="Activity name">
+                <input type="number" id="activity-duration" placeholder="Duration (minutes)">
+                <select id="activity-intensity">
+                    <option value="low">Low Intensity</option>
+                    <option value="medium">Medium Intensity</option>
+                    <option value="high">High Intensity</option>
+                </select>
+                <button id="add-activity-btn">Add Activity</button>
+            </div>
+            <ul id="activity-list">
+                                                                       <!-- Activities will be added here dynamically -->
+            </ul>
+        </section>
+        <section id="goals">
+            <h2>Daily Goals</h2>
+            <div id="calorie-goal">
+                <label for="calorie-goal-input">Calorie Goal:</label>
+                <input type="number" id="calorie-goal-input" placeholder="Enter calorie goal">
+            </div>
+            <div id="step-goal">
+                <label for="step-goal-input">Step Goal:</label>
+                <input type="number" id="step-goal-input" placeholder="Enter step goal">
+            </div>
+            <div id="active-minutes-goal">
+                <label for="active-minutes-goal-input">Active Minutes Goal:</label>
+                <input type="number" id="active-minutes-goal-input" placeholder="Enter active minutes goal">
+            </div>
+            <button id="set-goals-btn">Set Goals</button>
+        </section>
+        <section id="charts">
+            <h2>Activity Charts</h2>
+            <div class="chart-container">
+                <canvas id="activity-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="weekly-progress-chart"></canvas>
+            </div>
+        </section>
+        <section id="history">
+            <h2>Activity History</h2>
+            <div id="date-selector">
+                <label for="history-date">Select Date:</label>
+                <input type="date" id="history-date">
+                <button id="load-history-btn">Load History</button>
+            </div>
+            <div id="history-data">
+                <!-- Historical data will be displayed here -->
+            </div>
+        </section>
+        <!--<section id="achievements">
+            <h2>Achievements</h2>
+            <div id="achievement-list">
+                <!-- Achievements will be displayed here -->
+            </div>
+        </section> 
+    </main>
+    <footer>
+        <p>@Gigaversity Frontend Developer Intern Task.</p>
+    </footer>
+    <script src="fitness.js"></script>
+</body>
+</html>
+
+
+
